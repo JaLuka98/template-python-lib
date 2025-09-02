@@ -24,10 +24,8 @@ release = __version__
 version = ".".join(release.split(".")[:2])
 
 # -- General configuration ---------------------------------------------------
-# https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
 
-# Extensions
-extensions = [
+extensions: list[str] = [
     "sphinx.ext.autodoc",
     "sphinx.ext.napoleon",  # For Google/NumPy-style docstrings
     "sphinx.ext.viewcode",
@@ -37,14 +35,13 @@ extensions = [
 ]
 
 autoapi_type = "python"
-autoapi_dirs = ["../../src"]
-autoapi_ignore = ["*/__main__.py", "*/tests/*"]
+autoapi_dirs: list[str] = ["../../src"]
+autoapi_ignore: list[str] = ["*/__main__.py", "*/tests/*"]
 
-templates_path = ["_templates"]
-exclude_patterns = []
+templates_path: list[str] = ["_templates"]
+exclude_patterns: list[str] = []
 
 # -- Options for HTML output -------------------------------------------------
-# https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output
 
 html_theme = "sphinx_rtd_theme"
-html_static_path = ["_static"]
+html_static_path: list[str] = ["_static"]
