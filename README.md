@@ -20,14 +20,27 @@ git clone https://github.com/your-org/my-awesome-lib.git
 cd my-awesome-lib
 ```
 
-### 3. Set up your environment
+### 3. Apply required customisations
+Before you start developing, update the following items in your new project:
+
+| Item                        | Where to change                                     | Notes                                           |
+|-----------------------------|-----------------------------------------------------|-------------------------------------------------|
+| Package name                | `src/template_python_lib/` → `src/your_package/`    | Rename the directory and update all references  |
+| Import paths                | All source and test files                           | Replace `template_python_lib` with your package |
+| Package metadata            | `pyproject.toml`, `setup.cfg`                       | Update name, author, description, etc.          |
+| Version                     | `pyproject.toml`, `setup.cfg`                       | Optionally set initial version                  |
+| License                     | `pyproject.toml`, `setup.cfg`, LICENSE              | Choose and update license as needed             |
+| README                      | `README.md`                                         | Update project name and description             |
+| Documentation               | `docs/`                                             | Update Sphinx config and docstrings             |
+
+### 4. Set up your environment
 Set up the necessary packages in an environment of your choice:
 ```bash
 <activate_your_environment>
 pip install -e .[dev]
 ```
 
-### 4. Run tests to verify setup
+### 5. Run tests to verify setup
 ```bash
 pytest
 ```
